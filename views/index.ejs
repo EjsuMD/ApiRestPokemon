@@ -1,0 +1,14 @@
+<body>
+    <%- include('header') %>
+    <div class="buscador">
+        <p>Seleccione los pokemones por tipo de Pokémon:</p>
+        <form action="/buscarPorTipo" method="get">
+            <select name="tipo">
+                <% tiposPokemon.forEach(tipo => { %>
+                    <option value="<%= tipo.name %>"><%= tipo.name %></option>
+                <% }); %>
+            </select>
+            <button type="submit">Buscar</button>
+        </form>
+    </div>
+</body>

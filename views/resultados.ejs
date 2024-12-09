@@ -1,0 +1,36 @@
+<%- include('header') %>
+
+
+<h1 class="title_resultados">Pokémon del tipo : <%= tipoPokemon %></h1>
+
+<div class="centrar">
+  <button class="imprimir" id="imprimir">guardar en PDF</button>
+</div>
+
+<div class="resultados">  
+  <div class="contenedor-pokemones">
+    <% pokemones.slice(0, 10).forEach(pokemon => { %>
+      <div class="pokemon">
+        <img src="<%= 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/' + pokemon.pokemon.url.split('/').slice(-2, -1) + '.png' %>" alt="<%= pokemon.pokemon.name %>">
+        <p>Nombre: <%= pokemon.pokemon.name %></p> 
+        <p>Numero: <%= pokemon.pokemon.url.split('/').slice(-2, -1) %></p>
+      </div>
+    <% }); %>
+  </div>
+</div>
+
+
+<script>
+  document.getElementById('imprimir').addEventListener('click', function() {
+
+    document.getElementById('imprimir').style.display = 'none';
+    
+
+    window.print();
+  });
+
+  window.addEventListener('afterprint', function() {
+    document.getElementById('imprimir').style.display = 'block';
+  });
+</script>
+

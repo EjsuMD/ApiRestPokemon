@@ -1,0 +1,20 @@
+{
+  "name": "proyecto-node",
+  "version": "1.0.0",
+  "description": "Mi primer proyecto node",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Eduardo",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.7.9",
+    "ejs": "^3.1.10",
+    "express": "^4.21.2",
+    "jspdf": "^2.5.2",
+    "pdfkit": "^0.15.1",
+    "puppeteer": "^23.10.1"
+  }
+}
